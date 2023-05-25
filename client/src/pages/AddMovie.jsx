@@ -29,8 +29,8 @@ const AddMovie = () => {
             await axios.post('http://localhost:4000/api/movies', formValues);
             navigate('/');
         } catch (error) {
-            console.error(error);
-            alert("Add Movie Failed!");
+            console.error(error.response.data);
+            alert("Add Movie Failed!  ->  " + error);
         }
 
         setIsAddingMovie(false);
